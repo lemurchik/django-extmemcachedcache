@@ -86,9 +86,9 @@ class ExtPyLibMCCache(BaseExtMemcachedCache):
 
     def __init__(self, server, params):
         import pylibmc
-        super(PyLibMCCache, self).__init__(server, params,
-                                           library=pylibmc,
-                                           value_not_found_exception=pylibmc.NotFound)
+        super(ExtPyLibMCCache, self).__init__(server, params,
+                                              library=pylibmc,
+                                              value_not_found_exception=pylibmc.NotFound)
 
     @cached_property
     def _cache(self):
