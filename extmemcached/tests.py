@@ -6,7 +6,7 @@ from django.core.cache import caches
 from django.test import SimpleTestCase
 
 
-class TestExtCatch(SimpleTestCase):
+class TestExtCache(SimpleTestCase):
     """
     In case if some of ExtMemcached backed in use - it can be tested
     """
@@ -73,7 +73,7 @@ class TestExtCatch(SimpleTestCase):
 
     # Things below could be implemented much easier with mock
 
-    def _test_herd_management(self, catch):
+    def _test_herd_management(self, cache):
         globals()['call_count'] = 0
 
         def test_callable(v):
@@ -93,7 +93,7 @@ class TestExtCatch(SimpleTestCase):
             }
 
             async_result = pool.apply_async(
-                catch.get_or_set, kwds=to_func
+                cache.get_or_set, kwds=to_func
             )
             processes.append(async_result)
 

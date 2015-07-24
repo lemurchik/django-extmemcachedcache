@@ -9,8 +9,16 @@ Example:
 
 .. code-block:: python
 
-    cahced_value = cache.get_or_set(some_key, some_value)
+    some_params = {'something': 10}
+    cached_value = cache.get_or_set(some_key, cllable_function, callback_params=some_params)
 ..
+
+Method will try to retrieve data from cache and if it's empty - the callable
+object with parameters will be used for getting needed data and also stored to cache as well.
+To avoiding Thundering Herd problem during operation method using lock with atomic memcached operation ADD.
+After all operations - lock is released.
+If lock already exist - method will wait until it will be released and  the cached data will be returned
+
 
 
 How to install
