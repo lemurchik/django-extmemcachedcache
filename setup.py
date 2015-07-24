@@ -7,7 +7,7 @@ VERSION = '0.1.0'
 setup(
     name='django-extmemcachedcache',
     version=VERSION,
-    packages=['extmemcached'],
+    packages=['extmemcachedcache'],
     description='Improved memcached cache backend for Django',
     long_description=file(
         os.path.join(os.path.dirname(__file__), 'README.rst')

@@ -1,7 +1,7 @@
 Description
 ===========
 
-Extmemcached is extending of base memcached cache backend for Django with simple way of
+Extmemcachedcache is extending of base memcached cache backend for Django with simple way of
 avoiding Thundering Herd problem
 
 It's provide method get_or_set that allow to avoid Thundering Herd problem in most simple way
